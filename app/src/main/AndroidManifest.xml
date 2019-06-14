@@ -4,6 +4,7 @@
           package="com.kingtech.kotlinapp">
 
   <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
   <application
        android:allowBackup="true"
@@ -13,24 +14,28 @@
        android:supportsRtl="true"
        android:theme="@style/AppTheme"
        tools:ignore="GoogleAppIndexingWarning">
-    <activity android:name=".NewsActivity">
+    <activity android:name=".room.ImageUploadActivity">
+    </activity>
+    <activity android:name=".room.WordActivity">
+    </activity>
+    <activity android:name=".retrofit.NewsActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
 
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
     </activity>
-    <activity android:name=".CourseWebPageActivity"/>
-    <activity android:name=".CourseDetailActivity">
+    <activity android:name=".okhttp.CourseWebPageActivity"/>
+    <activity android:name=".okhttp.CourseDetailActivity">
       <meta-data
            android:name="android.support.PARENT_ACTIVITY"
-           android:value=".CourseDetailActivity"/>
+           android:value=".okhttp.CourseDetailActivity"/>
     </activity>
     <activity
-         android:name=".YouTubeActivity"
+         android:name=".okhttp.YouTubeActivity"
          android:launchMode="singleTop">
     </activity>
-    <activity android:name=".MainActivity">
+    <activity android:name=".okhttp.MainActivity">
     </activity>
   </application>
 

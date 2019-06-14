@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+  <data>
+    <variable
+         name="article"
+         type="com.kingtech.kotlinapp.retrofit.Articles"/>
+
+    <variable
+         name="onClickListerner"
+         type="com.kingtech.kotlinapp.retrofit.NewsArticleClickListener"/>
+  </data>
+
+  <android.support.constraint.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="250dp"
+       android:onClick="@{() -> onClickListerner.onClick(article)}"
+  >
+
+    <ImageView
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         app:layout_constraintTop_toTopOf="parent"
+         app:layout_constraintBottom_toTopOf="@id/view"
+         app:srcCompat="@drawable/register_image_edited"
+         android:scaleType="fitXY"
+         app:imageFromUrl="@{article}"
+    />
+
+    <LinearLayout
+         android:id="@+id/view"
+         android:layout_width="match_parent"
+         android:background="#1C00ff00"
+         app:layout_constraintBottom_toBottomOf="parent"
+         android:layout_height="75dp"
+         android:orientation="vertical">
+
+      <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           tools:text="Author Name"
+           android:textSize="18sp"
+           android:textColor="#ffffff"
+           android:layout_marginTop="10dp"
+           android:layout_marginStart="10dp"
+           app:authorName="@{article}"
+      />
+
+      <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           tools:text="News Title goes here"
+           android:textSize="18sp"
+           android:textColor="#ffffff"
+           android:layout_marginTop="6dp"
+           android:layout_marginStart="10dp"
+           app:newsTitle="@{article}"
+           android:maxLines="70"
+      />
+
+      <!--<TextView-->
+      <!--android:layout_width="wrap_content"-->
+      <!--android:layout_height="wrap_content"-->
+      <!--tools:text="News Description goes here"-->
+      <!--android:textSize="18sp"-->
+      <!--android:textColor="#ffffff"-->
+      <!--android:layout_marginTop="6dp"-->
+      <!--android:layout_marginStart="10dp"-->
+      <!--app:description="@{article}"-->
+      <!--android:maxLength="100"-->
+      <!--/>-->
+
+    </LinearLayout>
+
+
+  </android.support.constraint.ConstraintLayout>
+</layout>
